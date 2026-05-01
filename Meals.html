@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الوجبات - مطعم مرافئ الشرق</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="myFunctions.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="home.html">الرئيسية</a> | <a href="Meals.html">الوجبات</a> | <a href="AboutUs.html">من نحن</a>
+    </nav>
+
+    <h1 style="text-align: center;">قائمة الوجبات البحرية</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>الرمز</th>
+                <th>الوجبة</th>
+                <th>السعر</th>
+                <th>تفاصيل</th>
+                <th>اختيار</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>SF-01</td><td>سمك بوري مشوي</td><td>120000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-price="120000"></td></tr>
+            <tr class="details-row">
+                <td colspan="5" style="text-align:right">
+                    <strong>المكونات:</strong>  <img src="img/p1.jpg" style="float: left; margin-right: 15px;" width="300" height="200" />
+                    <ul>
+
+                        <li>سمكات بوري أحمر مغسول ومنظف </li>
+                        <li>بضعة اوراق من الاوريجانو الطازج مقطعة</li>
+                        <li>واحدة ملعقة صغيرة من ملح الطعام</li>
+                        <li>ملعقة واحدة صغيرة من الفلفل الاسود المطحون</li>
+                    </ul>
+            <tr><td>SF-02</td><td>روبيان جامبو مقلي</td><td>185000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-price="185000"></td></tr>
+            <tr class="details-row">
+                <td colspan="5" style="text-align:right">
+                    <strong>المكونات:</strong><img src="img/p2.jpg" style="float: left; margin-right: 15px;" width="300" height="200" />
+                    <ul>
+                        <li>حبات روبيان ملكية</li>
+                        <li>مغطاة بطبقة مقرمشة من البقسماط المتبل</li>
+                        <li>تقدم مع صوص التارتارالغني</li>
+                        <li>وبطاطا ودجز</li>
+                        <li>وسلطة كول سلو</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr><td>SF-03</td><td>فيليه هامور بالكريمة</td><td>110000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-price="110000"></td></tr>
+            <tr class="details-row">
+                <td colspan="5" style="text-align:right">
+                    <strong>المكونات:</strong> <img src="img/p3.jpg" style="float: left; margin-right: 15px;" width="300" height="200" />
+                    <ul>
+                        <li>شرائح فيليه هامور طرية</li>
+                        <li>مطبوخة بصوص الكريمة الفرنسية مع الفطر الطازج</li>
+                        <li>فلفل ابيض</li>
+                        <li>رشة جوزة الطيب</li>
+                        <li>وتقدم مع خضار سوتيه</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr><td>SF-04</td><td>كالماري مقرمش</td><td>95000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-price="95000"></td></tr>
+            <tr class="details-row">
+                <td colspan="5" style="text-align:right">
+                    <strong>المكونات:</strong> <img src="img/p4.jpg" style="float: left; margin-right: 15px;" width="300" height="200" />
+                    <ul>
+                        <li>حلقات كالماري(حبار) متبلة بالليمون والبابريكا</li>
+                        <li>مقلية لتعطي قواما مقرمشا</li>
+                        <li>تقدم مع صوص الكوكتيل </li>
+                        <li>وايضا تقدم مع شرائح الليمون الحامض</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr><td>SF-05</td><td>استاكوزا بالجبن</td><td>300000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-price="300000"></td></tr>
+            <tr class="details-row">
+                <td colspan="5" style="text-align:right">
+                    <strong>المكونات:</strong><img src="img/p5.jpg" style="float: left; margin-right: 15px;" width="300" height="200" />
+                    <ul>
+                        <li>زيل استاكوزا (جراد البحر) مشوي بالفرن</li>
+                        <li>مغطى بطبقة كثيفة من جبنة الموزاريلا والبارميزان</li>
+                        <li>زبدة بالثوم والريحان</li>
+                        <li>تقدم مع باستا بصوص الزبدة</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align:center; margin-top: 20px;">
+        <button id="btn-continue">متابعة الطلب</button>
+    </div>
+
+    <div id="order-form-section" class="hidden" style="max-width: 500px; margin: 20px auto; background: white; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
+        <h3 style="text-align: center;">بيانات الزبون</h3>
+        <form id="order-form">
+            الاسم الكامل: <input type="text" id="cust-name" style="width: 95%; padding: 8px; margin: 5px 0;">
+            الرقم الوطني (إجباري): <input type="text" id="nat-id" style="width: 95%; padding: 8px; margin: 5px 0;" required>
+            تاريخ الولادة: <input type="date" < id="birth-date" placeholder="01-01-1995" style="width: 95%; padding: 8px; margin: 5px 0;">
+            البريد الإلكتروني: <input type="text" id="cust-email" style="width: 95%; padding: 8px; margin: 5px 0;">
+            رقم الموبايل: <input type="text" id="mobile" style="width: 95%; padding: 8px; margin: 5px 0;">
+            <button type="submit" style="width: 100%; background: #27ae60; color: white; border: none; padding: 12px; cursor: pointer; margin-top: 15px; font-weight: bold;">تأكيد الفاتورة</button>
+        </form>
+    </div>
+</body>
+</html>
