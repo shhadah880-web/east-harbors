@@ -17,19 +17,22 @@ $(document).ready(function () {
         e.preventDefault();
 
         // التحقق الوحيد المطلوب: الرقم الوطني 11 رقم
-        const name = $('#cust-name').val().trim();
-        const arabicPattern = /^[\u0600-\u06FF\s]+$/;
+        var name = $('#cust-name').val().trim();
+        var arabicPattern = /^[\u0600-\u06FF\s]+$/;
 
-        const nidRegex = /^((0[1-9])|(1[0-4]))[0-9]{9}$/;
-        const natID = $('#nat-id').val();
+        var nidRegex = /^((0[1-9])|(1[0-4]))[0-9]{9}$/;
+        var natID = $('#nat-id').val();
 
-        const birthDateVal = $('#birth-date').val();
-        const selectedDate = new Date(birthDateVal);
-        const today = new Date();
+        var birthDateVal = $('#birth-date').val();
+        var selectedDate = new Date(birthDateVal);
+        var today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        const phoneNumber = $('#mobile').val().trim();
-        const syriaPattern = /^(09)(3|9|4|5|6|8)\d{7}$/;
+        var phoneNumber = $('#mobile').val().trim();
+        var syriaPattern = /^(09)(3|9|4|5|6|8)\d{7}$/;
+
+        var emailVal = $('#email').val().trim();
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (name !== "" && !arabicPattern.test(name)) {
             alert("خطأ: إذا أردت إدخال الاسم يجب أن يكون باللغة العربية فقط")
@@ -38,11 +41,11 @@ $(document).ready(function () {
 
         if (natID === "") {
             alert("خطأ: حقل الرقم الوطني إجباري ولا يمكن تركه فارغاً");
-            return; 
+            return;
         }
         if (!nidRegex.test(natID)) {
             alert("خطأ: الرقم الوطني يجب أن يبدأ برمز محافظة صحيح (01-14) ويتكون من 11 رقماً");
-            return; 
+            return;
         }
 
         if (birthDateVal !== "" && selectedDate > today) {
@@ -56,11 +59,18 @@ $(document).ready(function () {
             return;
         }
 
+        if (emailVal !== "" && !emailPattern.test(emailVal)) {
+            alert("خطأ: صيغة البريد الإلكتروني غير صحيحة، يرجى التأكد منها");
+            return false; // لإيقاف الإرسال
+        }
+
+
         // حساب الأسعار
         let total = 0;
         $('.meal-chk:checked').each(function () {
             total += parseInt($(this).data('price'));
         });
+
 
         let discount = total * 0.05; // حسم 5%
         let finalPrice = total - discount;
