@@ -94,14 +94,15 @@
 
     <div id="order-form-section" class="hidden" style="max-width: 500px; margin: 20px auto; background: white; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
         <h3 style="text-align: center;">بيانات الزبون</h3>
-        <form id="order-form">
-            الاسم الكامل: <input type="text" id="cust-name" style="width: 95%; padding: 8px; margin: 5px 0;">
-            الرقم الوطني (إجباري): <input type="text" id="nat-id" style="width: 95%; padding: 8px; margin: 5px 0;" required>
-            تاريخ الولادة: <input type="date" < id="birth-date" placeholder="01-01-1995" style="width: 95%; padding: 8px; margin: 5px 0;">
-            البريد الإلكتروني: <input type="text" id="cust-email" style="width: 95%; padding: 8px; margin: 5px 0;">
-            رقم الموبايل: <input type="text" id="mobile" style="width: 95%; padding: 8px; margin: 5px 0;">
-            <button type="submit" style="width: 100%; background: #27ae60; color: white; border: none; padding: 12px; cursor: pointer; margin-top: 15px; font-weight: bold;">تأكيد الفاتورة</button>
-        </form>
+       <form id="order-form">
+     <input type="text" id="cust-name" placeholder="الاسم الكامل (باللغة العربية)" style="width: 95%; padding: 8px; margin: 10px 0;">
+     <input type="text" id="nat-id" placeholder="الرقم الوطني (إجباري - 11 رقم)" style="width: 95%; padding: 8px; margin: 10px 0;" required>
+     <label for="birth-date" style="display: block; margin-top: 5px;">تاريخ الولادة:</label>
+     <input type="date" id="birth-date" style="width: 95%; padding: 8px; margin: 5px 0;">
+     <input type="text" id="cust-email" placeholder="البريد الإلكتروني (اختياري)" style="width: 95%; padding: 8px; margin: 10px 0;">
+     <input type="text" id="mobile" placeholder="رقم الموبايل (اختياري - 09xxxxxxxx)" style="width: 95%; padding: 8px; margin: 10px 0;">
+     <button type="submit" style="width: 100%; background: #27ae60; color: white; border: none; padding: 12px; cursor: pointer; margin-top: 15px; font-weight: bold;">تأكيد الفاتورة</button>
+ </form>
     </div>
 </body>
 </html>
