@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // 1. اظهار واخفاء التفاصيل المكونات
+    // 1. اظهار واخفاء تفاصيل المكونات
     $('.detail-chk').on('change', function () {
         $(this).closest('tr').next('.details-row').toggle(this.checked);
     });
@@ -16,7 +16,7 @@ $(document).ready(function () {
     $('#order-form').submit(function (e) {
         e.preventDefault();
 
-        // التحقق الوحيد المطلوب: الرقم الوطني 11 رقم
+        // التحقق الوحيد المطلوب هو الرقم الوطني
         var name = $('#cust-name').val().trim();
         var arabicPattern = /^[\u0600-\u06FF\s]+$/;
 
@@ -61,26 +61,35 @@ $(document).ready(function () {
 
         if (emailVal !== "" && !emailPattern.test(emailVal)) {
             alert("خطأ: صيغة البريد الإلكتروني غير صحيحة، يرجى التأكد منها");
-            return false; // لإيقاف الإرسال
+            return false; 
         }
 
 
-        // حساب الأسعار
+        // حساب الاسعار 
         let total = 0;
-        $('.meal-chk:checked').each(function () {
-            total += parseInt($(this).data('price'));
-        });
+        let mealsList = ""; // متغير جديد لتخزين أسماء الوجبات واسعرها
 
+        $('.meal-chk:checked').each(function () {
+            let mealName = $(this).data('name'); // استدعاء اسم الوجبة
+            let mealPrice = parseInt($(this).data('price')); // استدعاء سعر الوجبة
+
+            total += mealPrice;
+            // إضافة الوجبة الحالية للقائمة
+            mealsList += "• " + mealName + " : " + mealPrice.toLocaleString() + " ل.س\n";
+        });
 
         let discount = total * 0.05; // حسم 5%
         let finalPrice = total - discount;
 
-        // رسالة الفاتورة النهائية  
+        // رسالة الفاتورة النهائية
         alert("ملخص الفاتورة - \n" +
-            "----------------------------------------\n" +
-            "إجمالي السعر: " + total.toLocaleString() + " ل.س\n" +
+            "_______________________________________________________________\n" +
+            "الوجبات المختارة:\n" +
+            mealsList + 
+            "_______________________________________________________________\n" +
+            "إجمالي السعر : " + total.toLocaleString() + " ل.س\n" +
             "قيمة الحسم (5%): " + discount.toLocaleString() + " ل.س\n" +
-            "المبلغ الصافي المطلوب: " + finalPrice.toLocaleString() + " ل.س\n\n" +
-            "شكراً لتعاملكم مع مطعم مرافئ الشرق.");
+            "المبلغ الصافي المطلوب : " + finalPrice.toLocaleString() + " ل.س\n\n" +
+            "شكراً لتعاملكم مع مطعم مرافئ الشرق");
     });
 });
