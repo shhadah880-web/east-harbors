@@ -7,13 +7,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="myFunctions.js"></script>
 </head>
-<body>
+<body class="mealse-page">
     <nav>
         <a href="home.html">الرئيسية</a> | <a href="Meals.html">الوجبات</a> | <a href="AboutUs.html">من نحن</a>
     </nav>
-    <h1 style=" text-align:center">مطعم مرافئ الشرق</h1>
-    <h2 style="text-align: center;">قائمة الوجبات البحرية</h2>
-    <table>
+    <h1 style= "color: #d35400  !important; text-align: center;">مطعم مرافئ الشرق</h1>
+    <h2 style="color: #d35400 !important; text-align: center; ">قائمة الوجبات البحرية</h2>    <table>
         <thead>
             <tr>
                 <th>الرمز</th>
@@ -24,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td>SF-01</td><td>سمك بوري مشوي</td><td>120000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-price="120000"></td></tr>
+            <tr><td>SF-01</td><td>سمك بوري مشوي</td><td>120000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-name="سمك بوري مشوي" data-price="120000"></td></tr>
             <tr class="details-row">
                 <td colspan="5" style="text-align:right">
                     <strong>المكونات:</strong>  <img src="img/p1.jpg" style="float: left; margin-right: 15px;" width="300" height="200" />
@@ -35,7 +34,7 @@
                         <li>واحدة ملعقة صغيرة من ملح الطعام</li>
                         <li>ملعقة واحدة صغيرة من الفلفل الاسود المطحون</li>
                     </ul>
-            <tr><td>SF-02</td><td>روبيان جامبو مقلي</td><td>185000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-price="185000"></td></tr>
+            <tr><td>SF-02</td><td>روبيان جامبو مقلي</td><td>185000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-name="روبيان جامبو مقلي" data-price="185000"></td></tr>
             <tr class="details-row">
                 <td colspan="5" style="text-align:right">
                     <strong>المكونات:</strong><img src="img/p2.jpg" style="float: left; margin-right: 15px;" width="300" height="200" />
@@ -48,7 +47,7 @@
                     </ul>
                 </td>
             </tr>
-            <tr><td>SF-03</td><td>فيليه هامور بالكريمة</td><td>110000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-price="110000"></td></tr>
+            <tr><td>SF-03</td><td>فيليه هامور بالكريمة</td><td>110000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-name="فيليه هامور بالكريمة" data-price="110000"></td></tr>
             <tr class="details-row">
                 <td colspan="5" style="text-align:right">
                     <strong>المكونات:</strong> <img src="img/p3.jpg" style="float: left; margin-right: 15px;" width="300" height="200" />
@@ -61,7 +60,7 @@
                     </ul>
                 </td>
             </tr>
-            <tr><td>SF-04</td><td>كالماري مقرمش</td><td>95000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-price="95000"></td></tr>
+            <tr><td>SF-04</td><td>كالماري مقرمش</td><td>95000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-name="كالماري مقرمش" data-price="95000"></td></tr>
             <tr class="details-row">
                 <td colspan="5" style="text-align:right">
                     <strong>المكونات:</strong> <img src="img/p4.jpg" style="float: left; margin-right: 15px;" width="300" height="200" />
@@ -73,7 +72,7 @@
                     </ul>
                 </td>
             </tr>
-            <tr><td>SF-05</td><td>استاكوزا بالجبن</td><td>300000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-price="300000"></td></tr>
+            <tr><td>SF-05</td><td>استاكوزا بالجبن</td><td>300000</td><td><input type="checkbox" class="detail-chk"></td><td><input type="checkbox" class="meal-chk" data-name="استاكوزا بالجبن" data-price="300000"></td></tr>
             <tr class="details-row">
                 <td colspan="5" style="text-align:right">
                     <strong>المكونات:</strong><img src="img/p5.jpg" style="float: left; margin-right: 15px;" width="300" height="200" />
@@ -87,21 +86,18 @@
             </tr>
         </tbody>
     </table>
-
     <div style="text-align:center; margin-top: 20px;">
         <button id="btn-continue">متابعة الطلب</button>
     </div>
-
     <div id="order-form-section" class="hidden" style="max-width: 500px; margin: 20px auto; background: white; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
         <h3 style="text-align: center;">بيانات الزبون</h3>
-
         <form id="order-form">
             <input type="text" id="cust-name" placeholder="الاسم الكامل (باللغة العربية)" style="width: 95%; padding: 8px; margin: 10px 0;">
             <input type="text" id="nat-id" placeholder="الرقم الوطني (إجباري - 11 رقم)" style="width: 95%; padding: 8px; margin: 10px 0;" required>
             <input type="date" id="birth-date" style="width: 95%; padding: 8px; margin: 5px 0;">
             <input type="text" id="mobile" placeholder="رقم الموبايل (اختياري - 09xxxxxxxx)" style="width: 95%; padding: 8px; margin: 10px 0;">
             <input type="text" id="email" placeholder="البريد الإلكتروني (اختياري)" style="width: 95%; padding: 8px; margin: 10px 0;" />
-            <button type="submit" style="width: 100%; background: #27ae60; color: white; border: none; padding: 12px; cursor: pointer; margin-top: 15px; font-weight: bold;">تأكيد الفاتورة</button>
+            <button type="submit" style="width: 100%;  color: white; border: none; padding: 12px; cursor: pointer; margin-top: 15px; font-weight: bold;">تأكيد الفاتورة</button>
         </form>
     </div>
 </body>
